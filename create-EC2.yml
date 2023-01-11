@@ -16,6 +16,12 @@
      security_group: ec2-security-group
    
    tasks:
+     - name: misc task on ubuntu 18.04 instance
+       hosts: "*"
+       vars:
+         ansible_python_interpreter: /usr/bin/python3
+       tasks:
+         - debug: var=ansible_host
 
      - name: Create a security group
        local_action: 
